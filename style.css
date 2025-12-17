@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #1a1a1a;
+    font-family: 'Geom', sans-serif;
+    color: #e0e0e0;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.carousel-container {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+#myCarousel,
+.carousel-inner,
+.carousel-inner .item {
+    height: 100%;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.navbar-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+/* ---------- Logo ---------- */
+.navbar-logo {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 64px;
+    width: auto;
+    z-index: 1100;
+
+    filter:
+        drop-shadow(0 0 6px rgba(0, 98, 255, 0.6))
+        drop-shadow(0 0 14px rgba(0, 98, 255, 0.45))
+        drop-shadow(0 0 32px rgba(0, 98, 255, 0.3));
+
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: translateY(-50%) scale(1.05);
+    filter:
+        drop-shadow(0 0 10px rgba(0, 98, 255, 0.9))
+        drop-shadow(0 0 28px rgba(0, 98, 255, 0.6))
+        drop-shadow(0 0 48px rgba(0, 98, 255, 0.4));
+}
+
+/* ---------- Menu ---------- */
+.navbar-custom ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+
+    padding: 3rem 0;
+
+    /* spazio riservato al logo (sx) + simmetria (dx) */
+    padding-left: clamp(160px, 18vw, 260px);
+    padding-right: clamp(160px, 18vw, 260px);
+
+    width: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.navbar-custom li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    padding: 0.8rem 2.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-custom li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #0062ff,
+        transparent
+    );
+    transition: width 0.3s ease;
+}
+
+.navbar-custom li a:hover,
+.navbar-custom li a.active {
+    color: #0062ff;
+    background-color: rgba(0, 98, 255, 0.12);
+}
+
+.navbar-custom li a:hover::before {
+    width: 80%;
+}
+
+.hero-section {
+    position: relative;
+    z-index: 100;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 16rem 12rem 35rem;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 800px;
+    pointer-events: auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 4rem;
+    color: #ffffff;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.9);
+    margin-bottom: 1rem;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #0062ff, #00c8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-control {
+    z-index: 1100;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.85;
+}
+
+.carousel-control:hover {
+    opacity: 1;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    background: none;
+    width: 80px;
+}
+
+.carousel-control .glyphicon {
+    color: #0062ff;
+    font-size: 3.5rem;
+    text-shadow: 0 0 20px rgba(0, 98, 255, 0.7);
+}
+
+.carousel-indicators {
+    bottom: 40px;
+    z-index: 900;
+}
+
+.carousel-indicators li {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-indicators .active {
+    width: 40px;
+    border-radius: 10px;
+    background: #0062ff;
+}
+
+.footer {
+    position: relative;
+    z-index: 100;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0)
+    );
+}
+
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 48px;
+        left: 1.5rem;
+    }
+
+    .navbar-custom ul {
+        gap: 2.5rem;
+        padding: 2rem 0;
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+
+    .navbar-custom li a {
+        font-size: 1.4rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    .hero-section {
+        padding: 8rem 2rem 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}

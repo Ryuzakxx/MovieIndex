@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo - MovieIndex</title>
+    <link rel="stylesheet" href="style_catalogo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar-custom">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogo.html" class="active">Catalogo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <div class="catalog-header">
+        <h1>Catalogo <span class="gradient-text">Studio Ghibli</span></h1>
+        <p class="subtitle">I capolavori dell'animazione giapponese</p>
+    </div>
+
+    <!-- Movies Grid -->
+    <div class="grid-movies"></div>
+
+    <!-- Modal -->
+    <div id="movieModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modalClose" class="modal-close"></button>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

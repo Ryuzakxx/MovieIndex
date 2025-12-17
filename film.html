@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettagli Film - MovieIndex</title>
+    <link rel="stylesheet" href="style_film.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar-custom">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+        </ul>
+    </nav>
+    <!-- Banner del film -->
+    <div class="movie-banner">
+        <img id="bannerImage" src="" alt="Banner">
+        <div class="banner-overlay"></div>
+        <div class="scroll-indicator">
+            <span>Scorri per saperne di più</span>
+            <div class="arrow-down">↓</div>
+        </div>
+    </div>
+    <!-- Contenuto dettagli -->
+    <div class="movie-details">
+        <div class="details-container">
+            <!-- Poster e Info principali -->
+            <div class="details-header">
+                <div class="poster-section">
+                    <img id="posterImage" src="" alt="Poster">
+                </div>
+                
+                <div class="info-section">
+                    <h1 id="movieTitle"></h1>
+                    <p class="movie-meta" id="movieMeta"></p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">IMDB</span>
+                            <span class="stat-value" id="imdbRating"></span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Rotten Tomatoes</span>
+                            <span class="stat-value" id="rtRating"></span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Box Office</span>
+                            <span class="stat-value" id="boxOffice"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="premio-box">
+                        <span>🏆</span>
+                        <span id="premio"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Descrizione -->
+            <div class="description-section">
+                <h2>Trama</h2>
+                <p id="movieDescription"></p>
+            </div>
+            
+            <!-- NUOVA SEZIONE GALLERY -->
+            <div class="gallery-section">
+                <h2>Gallery</h2>
+                <div class="gallery-grid" id="galleryGrid">
+                    <script src="movie_data.js"></script>
+                </div>
+            </div>
+            
+            <!-- Pulsante torna al catalogo -->
+            <div class="back-button-container">
+                <a href="catalogo.html" class="btn-back">← Torna al Catalogo</a>
+            </div>
+        </div>
+    </div>
+    <script src="movie_data.js"></script>
+</body>
+</html>
